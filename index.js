@@ -9,6 +9,19 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
+
+app.use(express.urlencoded({
+    extended: true
+}))
+
+app.use(express.json)
+
+
+app.post('/criar', (requisicao, resposta) => {
+    const descricao = requisicao.body.descricao
+    const completa = 0
+})
+
 app.get('/', (requisicao, resposta) => {
     resposta.render('home')
 })
